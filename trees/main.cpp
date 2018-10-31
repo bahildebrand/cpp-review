@@ -10,4 +10,7 @@ int main() {
     b.insert(100);
     b.insert(1000);
     b.insert(-10);
+
+    b.DFS();
+    b.BFS();
 }

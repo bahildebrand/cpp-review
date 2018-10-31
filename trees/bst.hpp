@@ -17,10 +17,13 @@ class BST {
 
     private:
         Element *root;
+        void dfsTraverse(Element *e);
 
     public:
         BST(): root(nullptr) {}
         virtual void insert(int v);
         virtual void remove(int v);
         bool search(int v);
+        void DFS();
+        void BFS();
 };
