@@ -1,3 +1,9 @@
+typedef enum {
+    PREORDER,
+    INORDER,
+    POSTORDER
+} dfs_type;
+
 class BST {
     protected:
         class Element {
@@ -23,7 +29,10 @@ class BST {
         BST(): root(nullptr) {}
         virtual void insert(int v);
         virtual void remove(int v);
+        void inOrder(Element *e);
+        void preOrder(Element *e);
+        void postOrder(Element *e);
         bool search(int v);
-        void DFS();
         void BFS();
+        void DFS(dfs_type t);
 };

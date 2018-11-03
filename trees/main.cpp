@@ -1,4 +1,7 @@
 #include "bst.hpp"
+#include <iostream>
+
+using namespace std;
 
 int main() {
     BST b;
@@ -11,6 +14,12 @@ int main() {
     b.insert(1000);
     b.insert(-10);
 
-    b.DFS();
-    b.BFS();
+    cout << "PREORDER:" << endl;
+    b.DFS(PREORDER);
+
+    cout << "INORDER:" << endl;
+    b.DFS(INORDER);
+
+    cout << "POSTORDER:" << endl;
+    b.DFS(POSTORDER);
 }

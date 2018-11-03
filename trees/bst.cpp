@@ -94,10 +94,6 @@ void BST::dfsTraverse(Element *e) {
     }
 }
 
-void BST::DFS() {
-    dfsTraverse(this->root);
-}
-
 void BST::BFS() {
     Element *curEle = this->root;
     queue<Element*> q;
@@ -114,5 +110,43 @@ void BST::BFS() {
 
         curEle = q.front();
         q.pop();
+    }
+}
+
+void BST::inOrder(Element *e) {
+    if(e != nullptr) {
+        inOrder(e->getLeft());
+        cout << e->getVal() << endl;
+        inOrder(e->getRight());
+    }
+}
+
+void BST::preOrder(Element *e) {
+    if(e != nullptr) {
+        cout << e->getVal() << endl;
+        preOrder(e->getLeft());
+        preOrder(e->getRight());
+    }
+}
+
+void BST::postOrder(Element *e) {
+    if(e != nullptr) {
+        postOrder(e->getLeft());
+        postOrder(e->getRight());
+        cout << e->getVal() << endl;
+    }
+}
+
+void BST::DFS(dfs_type t) {
+    switch(t) {
+        case PREORDER:
+            preOrder(this->root);
+            break;
+        case INORDER:
+            inOrder(this->root);
+            break;
+        case POSTORDER:
+            postOrder(this->root);
+            break;
     }
 }
